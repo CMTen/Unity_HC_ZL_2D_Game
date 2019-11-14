@@ -3,8 +3,8 @@
 //類別  類別名稱
 public class floor : MonoBehaviour
 {
-    int jump = 1;        //整數
+    [Header("速度"),Range(0,100)]
     public float speed = 0.5f;    //浮點數
     public string prop = "地板"; //字串
-    bool misson = true;   //布林值(是/否)
+ 
 }
