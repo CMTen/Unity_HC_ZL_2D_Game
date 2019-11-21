@@ -7,6 +7,22 @@ public class GameManager : MonoBehaviour
     public int Score = 0;        //整數
     [Header("最高分數")]
     public int TopScore = 0;
+    [Header("水管")]
+    public GameObject Pipe;
+   
+
+    /// <summary>
+    /// 生成水管。
+    /// </summary>
+    public void SpawnPipe()
+    {
+        int x = 6;
+        float y = Random.Range(-1.3f, 2.0f);
+        Vector3 pos = new Vector3(x, y, 0);
+        Quaternion rot = new Quaternion(0, 0, 0, 0);
+
+        Object.Instantiate(Pipe, pos, rot);
+    }
 
     /// <summary>
     /// 加分功能
@@ -32,4 +48,10 @@ public class GameManager : MonoBehaviour
     {
 
     }
+
+    private void Start()
+    {
+        InvokeRepeating("SpawnPipe", 0, 0.5f);
+    }
+
 }
