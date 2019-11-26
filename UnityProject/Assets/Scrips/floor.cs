@@ -7,11 +7,19 @@ public class floor : MonoBehaviour
     public float speed = 0.5f;    //浮點數
     public string prop = "地板"; //字串
 
+    [Header("移動")]
+    public Transform tran;
+
     /// <summary>
     /// 地板移動功能
     /// </summary>
     private void move()
     {
+        tran.Translate(-speed * Time.deltaTime, 0, 0);
+    }
 
+    private void Update()
+    {
+        move();
     }
 }
