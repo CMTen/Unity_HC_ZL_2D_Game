@@ -22,6 +22,19 @@ public class LearnOpertor : MonoBehaviour
         print(c <= d);
         print(c == d);
         print(c != d);
+
+        print(true && true);
+        print(true && false);
+        print(false && true);
+        print(false && false);
+
+        print(true || true);
+        print(true || false);
+        print(false || true);
+        print(false || false);
+
+        print(!true);
+        print(!false);
     }
 
     private void Update()

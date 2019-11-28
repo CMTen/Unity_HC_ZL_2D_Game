@@ -51,7 +51,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        InvokeRepeating("SpawnPipe", 0, 170f *Time.deltaTime);
+        InvokeRepeating("SpawnPipe", 0, 130f *Time.deltaTime);
     }
 
 }

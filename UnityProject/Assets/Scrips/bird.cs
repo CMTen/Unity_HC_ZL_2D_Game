@@ -8,12 +8,20 @@ public class bird : MonoBehaviour
     public string prop = "小雞"; //字串
     public bool 存活 = true;   //布林值(是/否)
 
+    public GameObject goScore, goGM, goFloor;
+    
+
     /// <summary>
     /// 小雞跳躍功能
     /// </summary>
     private void Jump()
     {
-
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            print("跳");
+            goScore.SetActive(true);
+            goGM.SetActive(true);
+        }
     }
 
     /// <summary>
@@ -30,5 +38,10 @@ public class bird : MonoBehaviour
     private void passPipe()
     {
 
+    }
+
+    private void Update()
+    {
+        Jump();
     }
 }
