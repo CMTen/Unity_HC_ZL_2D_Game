@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
     public int TopScore = 0;
     [Header("水管")]
     public GameObject Pipe;
+    [Header("遊戲管理")]
+    public GameObject goUI;
    
 
     /// <summary>
@@ -46,7 +48,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void GameOver()
     {
-
+        goUI.SetActive(true);
     }
 
     private void Start()
