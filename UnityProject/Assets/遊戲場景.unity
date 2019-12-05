@@ -489,6 +489,7 @@ GameObject:
   - component: {fileID: 235331182}
   - component: {fileID: 235331181}
   - component: {fileID: 235331180}
+  - component: {fileID: 235331183}
   m_Layer: 0
   m_Name: "\u9EC3\u8272\u5C0F\u9D28"
   m_TagString: Untagged
@@ -635,6 +636,106 @@ MonoBehaviour:
   goFloor: {fileID: 1037415610}
   Rig: {fileID: 235331181}
   GM: {fileID: 811723067}
+  adu: {fileID: 235331183}
+  aduJUMP: {fileID: 8300000, guid: cb09a0db0d491bc4f80e7f45bfb84a4b, type: 3}
+  aduHIT: {fileID: 8300000, guid: 5d6ca5b63801cfe4f9e35a5a25e46ac7, type: 3}
+  aduADD: {fileID: 8300000, guid: a63014a1eb08df548a77c777297db80d, type: 3}
+--- !u!82 &235331183
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 235331176}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &365298042
 GameObject:
   m_ObjectHideFlags: 0
@@ -919,6 +1020,8 @@ MonoBehaviour:
   TopScore: 0
   Pipe: {fileID: 2877372307237172583, guid: a7f2233a65d2c5f49b1ed110328fc327, type: 3}
   goUI: {fileID: 1366877226}
+  textScore: {fileID: 1398995253}
+  textTop: {fileID: 1899897422}
 --- !u!4 &811723068
 Transform:
   m_ObjectHideFlags: 0
@@ -1053,7 +1156,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1935dbd85b3af8a45bc299caa94e1f1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
   prop: "\u5730\u677F"
   tran: {fileID: 1037415612}
 --- !u!1 &1129867105
@@ -1424,11 +1526,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1398995251}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0.14509805, g: 0.21960784, b: 0.29411766, a: 1}
-  m_EffectDistance: {x: 2, y: 2}
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 5, y: -5}
   m_UseGraphicAlpha: 1
 --- !u!1 &1533046732
 GameObject:
@@ -1860,7 +1962,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 999
+  m_Text: 0
 --- !u!222 &1899897423
 CanvasRenderer:
   m_ObjectHideFlags: 0

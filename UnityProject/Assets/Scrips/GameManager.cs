@@ -1,5 +1,6 @@
 ﻿
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,6 +12,10 @@ public class GameManager : MonoBehaviour
     public GameObject Pipe;
     [Header("遊戲管理")]
     public GameObject goUI;
+    [Header("分數介面")]
+    public Text textScore;
+    [Header("最高分數")]
+    public Text textTop;
    
 
     /// <summary>
@@ -32,7 +37,10 @@ public class GameManager : MonoBehaviour
     /// <param name="add">添加分數</param>
     public void addscore(int add) 
     {
+        Score += add;
+        textScore.text = Score + "";
 
+        setTopScore();
     }
 
     /// <summary>
@@ -40,7 +48,14 @@ public class GameManager : MonoBehaviour
     /// </summary>
     private void setTopScore()
     {
+        if (Score > TopScore)
+        {
+            TopScore = Score;
 
+            PlayerPrefs.SetInt("最高分數", TopScore);
+        }
+
+        textTop.text = TopScore + "";
     }
 
     /// <summary>
@@ -49,11 +64,16 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         goUI.SetActive(true);
+
+        floor.speed = 0;
     }
 
     private void Start()
     {
         InvokeRepeating("SpawnPipe", 0, 130f *Time.deltaTime);
+
+        TopScore = PlayerPrefs.GetInt("最高分數");
+        textTop.text = TopScore + "";
     }
 
 }
