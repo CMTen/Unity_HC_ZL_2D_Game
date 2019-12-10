@@ -66,7 +66,7 @@ public class bird : MonoBehaviour
 
     private void Start()
     {
-        Screen.SetResolution(480, 854, false);
+        Screen.SetResolution(720, 1280, false);
     }
 
     private void Update()
