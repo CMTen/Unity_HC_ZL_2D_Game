@@ -64,6 +64,11 @@ public class bird : MonoBehaviour
         GM.addscore(1);
     }
 
+    private void Start()
+    {
+        Screen.SetResolution(480, 854, false);
+    }
+
     private void Update()
     {
         Jump();

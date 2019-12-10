@@ -1,6 +1,7 @@
 ﻿
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -16,7 +17,6 @@ public class GameManager : MonoBehaviour
     public Text textScore;
     [Header("最高分數")]
     public Text textTop;
-   
 
     /// <summary>
     /// 生成水管。
@@ -68,9 +68,21 @@ public class GameManager : MonoBehaviour
         floor.speed = 0;
     }
 
+    public void Replay()
+    {
+        SceneManager.LoadScene("遊戲場景");
+    }
+
+    public void Exit()
+    {
+        Application.Quit();
+    }
+
     private void Start()
     {
         InvokeRepeating("SpawnPipe", 0, 130f *Time.deltaTime);
+
+        floor.speed = 3.5f;
 
         TopScore = PlayerPrefs.GetInt("最高分數");
         textTop.text = TopScore + "";
